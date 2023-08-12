@@ -5,8 +5,8 @@ export default function WelcomePage() {
      const userInfoStore = useUserInfoStore();
      return (
           <>
-               <section className="  w-full h-screen  flex justify-center items-center">
-                    <div className="bg-white  grid  h-90 md:w-1/3 shadow-2xl rounded-md p-8 ">
+               <section className="  w-screen h-screen  flex justify-center items-center">
+                    <div className="bg-white  grid h-90 w-full md:w-2/4 max-w-2xl shadow-2xl rounded-md p-8 ">
                          <div className="my-4">
                               <h1 className="text-4xl font-semibold text-center ">
                                    Poken Interaction
