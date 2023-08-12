@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useUserInfoStore, useArrayStore } from "../stores/store";
 import { Link } from 'react-router-dom';
 import { useState } from "react";
-import Card from "../components/card/card";
+import Card from "../components/card/Card";
 
 const getDataArray = (apiUrl) => {
      return fetch(apiUrl)
@@ -54,20 +54,14 @@ export default function ListPage() {
                               </h2>
                          </div>
                          <div className=" rounded-md my-4">
+                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                              {items?.map((item) => (
+                              <Link to={`/detail/${item.name}`} key={item.id} className="p-2 flex items-center justify-center rounded-md">
+                                   <Card title={item.name} />
+                              </Link>
+                              ))}
+                         </div>
 
-                              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2" >
-                                   {items?.map((item, index) => (
-                                        <>
-                                             <Link to={`/detail/${item.name}`} key={item.id} className="p-2 flex items-center justify-center rounded-md" >
-                                                  <Card
-                                                       key={index}
-                                                       title={item.name}
-                                                  //description={item.url}
-                                                  />
-                                             </Link>
-                                        </>
-                                   ))}
-                              </div>
 
                          </div>
                     </div>
