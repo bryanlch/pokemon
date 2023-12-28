@@ -58,8 +58,6 @@ export default function ListPage() {
                                         </Link>
                                    ))}
                               </div>
-
-
                          </div>
                     </div>
                </section>
